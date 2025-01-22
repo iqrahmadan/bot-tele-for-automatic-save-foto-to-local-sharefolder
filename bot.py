@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('TELEGRAM_TOKEN')
-SAVE_PATH = r'\\10.10.1.175\shared\AmbilFoto'
+SAVE_PATH = r'lokasi penyimpanan' # contoh : SAVE_PATH = r'c:\shared'
 
 def get_next_file_number():
     try:
@@ -35,8 +35,8 @@ async def save_photo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None
         current_date = datetime.now().strftime("%Y%m%d")
         file_number = get_next_file_number()
         
-        # Generate filename: astari_YYYYMMDD_XX.jpg
-        filename = f"astari_{current_date}_{file_number:02d}.jpg"
+        # Generate filename: atursesuaikeinginan_YYYYMMDD_XX.jpg
+        filename = f"atursesuaikeinginan_{current_date}_{file_number:02d}.jpg"  #ubah juga nama depannya ganti 
         file_path = os.path.join(SAVE_PATH, filename)
         
         # Get and save photo
